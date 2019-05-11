@@ -1,0 +1,44 @@
+{
+  "name": "tonks",
+  "version": "0.1.0",
+  "description": "Swap style libraries to compile new component libraries",
+  "skpm": {
+    "name": "Tonks",
+    "manifest": "src/manifest.json",
+    "main": "Tonks.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "postinstall": "skpm-link",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacksonrdlc/tonks.git"
+  },
+  "author": "Pausansol <pausansol@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacksonrdlc/tonks/issues"
+  },
+  "homepage": "https://github.com/jacksonrdlc/tonks#readme",
+  "devDependencies": {
+    "@skpm/builder": "^0.5.13",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^1.15.3"
+  },
+  "prettier": {
+    "proseWrap": "never",
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  }
+}

@@ -1,2 +1,2 @@
 # Tonks
-Sketch plugin to swap style libraries and compile new libraries
+Swap style libraries to compile new component libraries

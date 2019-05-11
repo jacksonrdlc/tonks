@@ -1,0 +1,17 @@
+{
+  "commands": [
+    {
+      "name": "Tonks",
+      "identifier": "tonks.replaceStyles",
+      "shortcut": "ctrl command c",
+      "script": "script.js"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": ["tonks.replaceStyles"]
+  },
+  "icon": "icon.png",
+  "appcast": "https://raw.githubusercontent.com/jacksonrdlc/tonks/master/appcast.xml",
+  "compatibleVersion": "53"
+}
