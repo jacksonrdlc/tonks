@@ -2,8 +2,8 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Tonks Plugin</title>
-    <link>https://github.com/Pausansol/Camilo</link>
-    <description>Camilo Plugin</description>
+    <link>https://github.com/jacksonrdlc/tonks</link>
+    <description>Tonks Plugin</description>
     <language>en</language>
     <item>
       <title>Version 1.4.1</title>
