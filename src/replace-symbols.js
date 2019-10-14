@@ -1,5 +1,6 @@
+
 // Replace all symbols in the document wich match their names with selected theme library
-export default function(document, library) {
+export default (document, library) => {
   const docSymbols = document.getSymbols()
   let docSymbolInstances = []
   const symbolsMap = {}
@@ -10,8 +11,8 @@ export default function(document, library) {
   const librarySymbols = library.getImportableSymbolReferencesForDocument(
     document
   )
-    
-  docSymbols.forEach(symbolMaster => {
+  
+  Promise.all(docSymbols.map((symbolMaster) => {
     const instances = symbolMaster.getAllInstances()
     docSymbolInstances = docSymbolInstances.concat(instances)
 
@@ -38,7 +39,9 @@ export default function(document, library) {
     // now that we replaced all the instances, we remove the master
     // eslint-disable-next-line no-param-reassign
     // symbolMaster.parent = null
-  })
+  })).catch(function(err) {
+    console.log(err.message); // some coding error in handling happened
+  });
 
   return { symbolsMap, docSymbolInstances }
 }

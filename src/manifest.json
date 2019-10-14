@@ -1,15 +1,20 @@
 {
   "commands": [
     {
-      "name": "Tonks",
-      "identifier": "tonks.replaceStyles",
+      "name": "Compile New Library",
+      "identifier": "compile",
+      "script": "switch-library.js"
+    },
+    {
+      "name": "Switch Libraries",
+      "identifier": "replaceLibraries",
       "shortcut": "ctrl command c",
-      "script": "script.js"
+      "script": "switch-library.js"
     }
   ],
   "menu": {
-    "isRoot": true,
-    "items": ["tonks.replaceStyles"]
+    "title": "✨ Tonks  ✨",
+    "items": ["compile", "replaceLibraries"]
   },
   "icon": "icon.png",
   "appcast": "https://raw.githubusercontent.com/jacksonrdlc/tonks/master/appcast.xml",

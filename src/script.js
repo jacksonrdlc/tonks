@@ -1,6 +1,5 @@
 import sketch from 'sketch'
 import settings from 'sketch/settings'
-import googleAnalytics from './analytics'
 import createRadioButtons from './create-radio-buttons'
 import switchLibrary from './switch-library'
 import switchSelection from './switch-selection'
@@ -14,14 +13,12 @@ export default function(context) {
   // create the alertWindow UI
   const alertWindow = createAlertWindow(context);
   alertWindow.addAccessoryView(getOptionSelected(libraries))
-  alertWindow.addButtonWithTitle('Switch')
+  alertWindow.addButtonWithTitle('Compile')
   alertWindow.addButtonWithTitle('Cancel')
   
   // create the radioButtons
-  const swapType = createRadioButtons(["Apply to document", "Apply to selection"],lastSelected)
+  const swapType = createRadioButtons(["Apply to library", "Apply to selection"],lastSelected)
   alertWindow.addAccessoryView(swapType)
-  
-  googleAnalytics(context, "Open Camilo", "Alert", "UI")
 
   if (alertWindow.runModal() == NSAlertFirstButtonReturn) {
     const chosenLibraryName = String(alertWindow.viewAtIndex(0).stringValue())
@@ -34,7 +31,6 @@ export default function(context) {
     if (swapType.selectedCell().tag() == 0) {
       settings.setSessionVariable('Selected', 0)
       switchLibrary(doc, lib)
-      googleAnalytics(context, 'Replace document with', lib.name, 'Library')
       sketch.UI.message(
       `🎉 🎈 🙌🏼  Applied theme from ${lib.name}  🙌🏼 🎉 🎈`
       )
@@ -43,7 +39,6 @@ export default function(context) {
     if (swapType.selectedCell().tag() == 1) {
       settings.setSessionVariable('Selected', 1)
       switchSelection(doc, lib)
-      googleAnalytics(context, 'Replace selected with', lib.name, 'Library')
       const selectedLayers = doc.selectedLayers.layers
       if(selectedLayers.length < 1){
         sketch.UI.message(
