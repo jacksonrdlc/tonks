@@ -1,6 +1,6 @@
 
 // Replace all symbols in the document wich match their names with selected theme library
-export default (document, library) => {
+export default (document, library, isSwitch) => {
   const docSymbols = document.getSymbols()
   let docSymbolInstances = []
   const symbolsMap = {}
@@ -38,7 +38,9 @@ export default (document, library) => {
 
     // now that we replaced all the instances, we remove the master
     // eslint-disable-next-line no-param-reassign
-    // symbolMaster.parent = null
+    if (isSwitch) {
+      symbolMaster.parent = null
+    }
   })).catch(function(err) {
     console.log(err.message); // some coding error in handling happened
   });

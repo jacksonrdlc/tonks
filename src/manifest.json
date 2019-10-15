@@ -3,13 +3,12 @@
     {
       "name": "Compile New Library",
       "identifier": "compile",
-      "script": "switch-library.js"
+      "script": "compile.js"
     },
     {
       "name": "Switch Libraries",
       "identifier": "replaceLibraries",
-      "shortcut": "ctrl command c",
-      "script": "switch-library.js"
+      "script": "switch.js"
     }
   ],
   "menu": {

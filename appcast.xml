@@ -6,8 +6,8 @@
     <description>Tonks Plugin</description>
     <language>en</language>
     <item>
-      <title>Version 1.4.1</title>
-      <enclosure url="https://github.com/jacksonrdlc/Tonks/archive/master.zip" sparkle:version="1.4.1"/>
+      <title>Version 0.1.0</title>
+      <enclosure url="https://github.com/jacksonrdlc/Tonks/archive/master.zip" sparkle:version="0.0"/>
     </item>
   </channel>
 </rss>

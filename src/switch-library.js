@@ -3,13 +3,11 @@ import replaceSymbols from './replace-symbols'
 import replaceOverrides from './replace-overrides'
 import replaceSharedStyles from './replace-shared-styles'
 
-const {Document} = require('sketch/dom')
-
 export default (document, library) => {
   const lookup = mapSharedStyles(document, library)
 
   // replace the symbols
-  const { symbolsMap, docSymbolInstances } = replaceSymbols(document, library)
+  const { symbolsMap, docSymbolInstances } = replaceSymbols(document, library, true)
 
   // replace the styles
   const layerStylesMap = replaceSharedStyles(
@@ -27,11 +25,6 @@ export default (document, library) => {
     symbolsMap,
     layerStylesMap,
     textStylesMap,
-  })
-
-
-  document.save('/Users/jack.rudelic/Desktop/Monsoy.sketch', {
-    saveMode: Document.SaveMode.SaveTo,
   })
 
   // reload the inspector to make sure we show the latest changes
