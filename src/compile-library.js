@@ -2,7 +2,7 @@ import mapSharedStyles from './map-shared-styles'
 import replaceSymbols from './replace-symbols'
 import replaceOverrides from './replace-overrides'
 import replaceSharedStyles from './replace-shared-styles'
-import {Document, Library} from 'sketch/dom'
+const { Document, Library } = require('sketch/dom')
 
 export default (document, library) => {
   const lookup = mapSharedStyles(document, library)
@@ -29,12 +29,12 @@ export default (document, library) => {
   })
 
 
-  document.save('/Users/jack.rudelic/Desktop/Jack.sketch', {
+  document.save(`/Users/jack.rudelic/Desktop/${library.name}Components.sketch`, {
     saveMode: Document.SaveMode.SaveTo,
   })
 
   Library.getLibraryForDocumentAtPath(
-    '/Users/jack.rudelic/Desktop/Jack.sketch'
+    `/Users/jack.rudelic/Desktop/${library.name}Components.sketch`
   )
 
   // reload the inspector to make sure we show the latest changes

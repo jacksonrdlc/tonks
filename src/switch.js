@@ -1,7 +1,7 @@
 import sketch from 'sketch'
 import switchLibrary from './switch-library'
 import getOptionSelected from './get-option-selected'
-import createAlertWindow from './create-alert-window'
+import createSwitchWindow from './create-switch-window'
 
 export default function(context) {
   
@@ -9,7 +9,7 @@ export default function(context) {
   // const lastSelected = settings.sessionVariable('Selected')
   
   // create the alertWindow UI
-  const alertWindow = createAlertWindow(context);
+  const alertWindow = createSwitchWindow(context);
   alertWindow.addAccessoryView(getOptionSelected(libraries))
   alertWindow.addButtonWithTitle('Switch')
   alertWindow.addButtonWithTitle('Cancel')
