@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Swap style libraries to compile new component libraries",
   "skpm": {
-    "name": "Tonks",
+    "name": "Tonks-beta",
     "manifest": "src/manifest.json",
     "main": "Tonks.sketchplugin",
     "assets": [
@@ -20,14 +20,17 @@
     "type": "git",
     "url": "git+https://github.com/jacksonrdlc/tonks.git"
   },
-  "author": "Pausansol <pausansol@gmail.com>",
+  "author": "Jacksonrdlc <jackrudelic@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jacksonrdlc/tonks/issues"
   },
   "homepage": "https://github.com/jacksonrdlc/tonks#readme",
   "devDependencies": {
+    "@babel/polyfill": "^7.4.4",
     "@skpm/builder": "^0.5.13",
+    "@skpm/child_process": "^0.4.0",
+    "@skpm/util": "^0.1.28",
     "eslint": "^5.10.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^3.3.0",
